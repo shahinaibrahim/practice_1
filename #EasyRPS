@@ -1,0 +1,41 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+user_choice=input("What do you choose?\nType 0 for Rock, 1 for Paper or 2 for Scissors.")
+
+random_choice=random.randint(0,2)
+if user_choice==random_choice:
+    print("It's a draw")
+elif random_choice<1 and user_choice<2:
+    pr
+elif random_choice==1:
+    print(
+elif random_choice==2:
+    print(
+else:
+    print("invalid")
+
