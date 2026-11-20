@@ -7,9 +7,13 @@ print(logo)
 score=0
 account_b=random.choice(data)
 game_on=True
-while game_on:
+turns = 3
+
+while turns > 0:
+    """User only have 3 chances to play the game"""
 
     def account_detail(account):
+        #Takes the account data and print
         account_name=account["name"]
         account_descr=account["description"]
         account_country=account["country"]
@@ -22,6 +26,7 @@ while game_on:
         account_b=random.choice(data)
 
     def compare_answer(a_account,b_account,user_guess, a_follower_count,b_follower_count):
+        #Take user's guess and the follower counts and returns if they got it right
         if a_follower_count>b_follower_count:
             return user_guess=="a"
         else:
@@ -37,9 +42,13 @@ while game_on:
 
     is_answer_correct=compare_answer(account_a,account_b,guess,account_count_a,account_count_b)
 
-    if is_answer_correct is True:
+
+    if is_answer_correct:
         score += 1
-        print(f"Correct!your score is:{score}")
+        print(f"Correct! Your score is: {score}")
     else:
-        print(f"Wrong!Your final score is:{score}")
-        game_on=False
+        print("Incorrect answer!")
+
+    turns -= 1
+
+print(f"Game Over! Final score: {score}/3")
